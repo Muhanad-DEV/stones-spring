@@ -1463,25 +1463,17 @@ body.tech-page::after {
 .tech-image { position: relative; overflow: hidden; border-radius: 14px; box-shadow: 0 10px 28px rgba(0,0,0,.15); }
 .tech-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-/* Gold side accent for both headings */
-.tech-hero::before, .tech-split::before {
-    content: ''; 
-    position: absolute; 
-    left: 40px; 
-    width: 6px; 
-    background: var(--color-gold); 
-    top: 80px; 
-    height: 60px;
+/* Gold left border for headings */
+.tech-title span, .tech-subtitle span {
+    border-left: 6px solid var(--color-gold);
+    padding-left: 20px;
 }
-.tech-hero { position: relative; }
-.tech-split { position: relative; }
 
 /* Responsive */
 @media (max-width: 900px) {
     .tech-title span { font-size: 2.2rem; }
     .tech-grid { grid-template-columns: 1fr; }
     .tech-container { padding: 0 20px; }
-    .tech-hero::before, .tech-split::before { left: 20px; }
 }
 
 
