@@ -45,16 +45,25 @@ document.addEventListener('DOMContentLoaded', function() {
                 const isOpen = dropdownMenu.classList.contains('show');
                 console.log('Is currently open:', isOpen);
                 
-                // Close all other dropdowns
-                document.querySelectorAll('.dropdown-menu').forEach(menu => {
-                    menu.classList.remove('show');
+                // Close all other dropdowns first
+                document.querySelectorAll('.dropdown').forEach(otherDropdown => {
+                    if (otherDropdown !== dropdown) {
+                        otherDropdown.classList.remove('show');
+                        const otherMenu = otherDropdown.querySelector('.dropdown-menu');
+                        if (otherMenu) {
+                            otherMenu.classList.remove('show');
+                        }
+                    }
                 });
                 
                 // Toggle current dropdown
                 if (!isOpen) {
+                    dropdown.classList.add('show');
                     dropdownMenu.classList.add('show');
                     console.log('Opening dropdown');
                 } else {
+                    dropdown.classList.remove('show');
+                    dropdownMenu.classList.remove('show');
                     console.log('Closing dropdown');
                 }
             }
@@ -78,8 +87,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // Close dropdowns when clicking outside
     document.addEventListener('click', function(e) {
         if (!e.target.closest('.dropdown')) {
-            document.querySelectorAll('.dropdown-menu').forEach(menu => {
-                menu.classList.remove('show');
+            document.querySelectorAll('.dropdown').forEach(dropdown => {
+                dropdown.classList.remove('show');
+                const menu = dropdown.querySelector('.dropdown-menu');
+                if (menu) {
+                    menu.classList.remove('show');
+                }
             });
         }
     });
