@@ -1417,9 +1417,21 @@ body.message-page::after {
 }
 
 /* Technology page (scoped with .tech-page / .tech-*) */
+body.tech-page {
+    background-image: url('about-us-bc.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Remove 3.png background from Technology page */
+body.tech-page::after {
+    display: none;
+}
+
 .tech-hero {
-    background: linear-gradient(180deg, rgba(247,247,247,.9), rgba(247,247,247,.9)), url('about-us-bc.png');
-    background-size: cover; background-position: center;
+    background: transparent;
     padding: 80px 0 40px 0;
 }
 
