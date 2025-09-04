@@ -1469,6 +1469,11 @@ body.tech-page::after {
     padding-left: 20px;
 }
 
+/* Production Technology page uses about-section styling */
+body.tech-page .about-section {
+    background: transparent;
+}
+
 /* Responsive */
 @media (max-width: 900px) {
     .tech-title span { font-size: 2.2rem; }
