@@ -183,7 +183,7 @@ body::after {
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Mobile menu styles */
+/* Mobile menu styles - using Bootstrap defaults */
 @media (max-width: 991.98px) {
     .custom-navbar .navbar-collapse {
         background: rgba(30, 41, 76, 0.98);
@@ -193,86 +193,16 @@ body::after {
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     }
     
-    .custom-navbar .navbar-nav {
-        gap: 8px;
-    }
-    
-    .custom-navbar .nav-item {
-        margin-bottom: 8px;
-    }
-    
-    .custom-navbar .nav-link {
-        padding: 15px 20px !important;
-        border-radius: 8px;
-        transition: all 0.3s ease;
-        font-size: 16px;
-        font-weight: 600;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-    
-    .custom-navbar .nav-link:hover {
-        background: rgba(255, 255, 255, 0.1);
-    }
-    
-    /* Dropdown arrow indicator */
-    .custom-navbar .dropdown-toggle::after {
-        content: '▼';
-        font-size: 12px;
-        margin-left: 10px;
-        transition: transform 0.3s ease;
-    }
-    
-    .custom-navbar .dropdown.show .dropdown-toggle::after {
-        transform: rotate(180deg);
-    }
-    
     .custom-navbar .dropdown-menu {
         background: rgba(255, 255, 255, 0.95);
         border: none;
         border-radius: 8px;
-        margin-top: 8px;
-        margin-left: 20px;
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        display: none;
-        position: static;
-        float: none;
-        width: calc(100% - 40px);
-        padding: 8px 0;
-        animation: slideDown 0.3s ease;
-    }
-    
-    .custom-navbar .dropdown-menu.show {
-        display: block !important;
-    }
-    
-    .custom-navbar .dropdown-item {
-        padding: 12px 20px;
-        border-radius: 6px;
-        margin: 2px 8px;
-        color: var(--color-slate) !important;
-        font-weight: 500;
-        transition: all 0.3s ease;
-        display: block;
     }
     
     .custom-navbar .dropdown-item:hover {
         background: var(--color-gold);
         color: var(--color-pure-white) !important;
-        transform: translateX(5px);
-    }
-    
-    /* Animation for dropdown */
-    @keyframes slideDown {
-        from {
-            opacity: 0;
-            transform: translateY(-10px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
     }
 }
 
