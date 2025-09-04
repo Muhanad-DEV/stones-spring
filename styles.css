@@ -183,6 +183,45 @@ body::after {
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
 }
 
+/* Mobile menu styles */
+@media (max-width: 991.98px) {
+    .custom-navbar .navbar-collapse {
+        background: rgba(30, 41, 76, 0.98);
+        margin-top: 10px;
+        border-radius: 8px;
+        padding: 15px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    .custom-navbar .navbar-nav {
+        gap: 10px;
+    }
+    
+    .custom-navbar .nav-link {
+        padding: 12px 16px !important;
+        border-radius: 6px;
+        transition: all 0.3s ease;
+    }
+    
+    .custom-navbar .nav-link:hover {
+        background: rgba(255, 255, 255, 0.1);
+    }
+    
+    .custom-navbar .dropdown-menu {
+        background: rgba(255, 255, 255, 0.95);
+        border: none;
+        border-radius: 6px;
+        margin-top: 5px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .custom-navbar .dropdown-item {
+        padding: 10px 16px;
+        border-radius: 4px;
+        margin: 2px 0;
+    }
+}
+
 /* Logo Section */
 .logo-section {
     display: flex;

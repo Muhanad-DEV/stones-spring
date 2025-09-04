@@ -2,36 +2,93 @@
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Script loaded on:', window.location.pathname);
     
+    // Handle mobile menu toggle manually
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+    
+    if (navbarToggler && navbarCollapse) {
+        navbarToggler.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            
+            if (isExpanded) {
+                // Close menu
+                navbarCollapse.classList.remove('show');
+                this.setAttribute('aria-expanded', 'false');
+            } else {
+                // Open menu
+                navbarCollapse.classList.add('show');
+                this.setAttribute('aria-expanded', 'true');
+            }
+        });
+    }
+    
+    // Handle dropdown toggles manually
+    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+    dropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const dropdown = this.closest('.dropdown');
+            const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+            
+            if (dropdownMenu) {
+                const isOpen = dropdownMenu.classList.contains('show');
+                
+                // Close all other dropdowns
+                document.querySelectorAll('.dropdown-menu').forEach(menu => {
+                    menu.classList.remove('show');
+                });
+                
+                // Toggle current dropdown
+                if (!isOpen) {
+                    dropdownMenu.classList.add('show');
+                }
+            }
+        });
+    });
+    
     // Handle navigation links - close mobile menu when clicking
     const navLinks = document.querySelectorAll('.nav-link, .dropdown-item');
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             // Close mobile menu if it's open
-            const navbarCollapse = document.querySelector('.navbar-collapse');
             if (navbarCollapse && navbarCollapse.classList.contains('show')) {
-                // Simple approach: just remove the show class
                 navbarCollapse.classList.remove('show');
-                // Also remove the aria-expanded attribute
-                const toggler = document.querySelector('.navbar-toggler');
-                if (toggler) {
-                    toggler.setAttribute('aria-expanded', 'false');
+                if (navbarToggler) {
+                    navbarToggler.setAttribute('aria-expanded', 'false');
                 }
             }
         });
     });
+    
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.dropdown')) {
+            document.querySelectorAll('.dropdown-menu').forEach(menu => {
+                menu.classList.remove('show');
+            });
+        }
+    });
 });
 
 // Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
+document.addEventListener('DOMContentLoaded', function() {
+    const anchorLinks = document.querySelectorAll('a[href^="#"]');
+    anchorLinks.forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
     });
 });
 
