@@ -213,6 +213,14 @@ body::after {
         border-radius: 6px;
         margin-top: 5px;
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        display: none;
+        position: static;
+        float: none;
+        width: 100%;
+    }
+    
+    .custom-navbar .dropdown-menu.show {
+        display: block !important;
     }
     
     .custom-navbar .dropdown-item {

@@ -27,16 +27,23 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Handle dropdown toggles manually
     const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
-    dropdownToggles.forEach(toggle => {
+    console.log('Found dropdown toggles:', dropdownToggles.length);
+    
+    dropdownToggles.forEach((toggle, index) => {
+        console.log(`Setting up dropdown ${index}:`, toggle.textContent.trim());
         toggle.addEventListener('click', function(e) {
+            console.log('Dropdown clicked:', this.textContent.trim());
             e.preventDefault();
             e.stopPropagation();
             
             const dropdown = this.closest('.dropdown');
             const dropdownMenu = dropdown.querySelector('.dropdown-menu');
             
+            console.log('Dropdown menu found:', !!dropdownMenu);
+            
             if (dropdownMenu) {
                 const isOpen = dropdownMenu.classList.contains('show');
+                console.log('Is currently open:', isOpen);
                 
                 // Close all other dropdowns
                 document.querySelectorAll('.dropdown-menu').forEach(menu => {
@@ -46,6 +53,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Toggle current dropdown
                 if (!isOpen) {
                     dropdownMenu.classList.add('show');
+                    console.log('Opening dropdown');
+                } else {
+                    console.log('Closing dropdown');
                 }
             }
         });
