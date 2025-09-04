@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Menu Test</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <img src="stones-spring-logo.png" alt="Stones Spring Logo" class="logo-image">
+                    <div class="logo-text">
+                        <span class="company-name">STONES SPRING</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="navigation">
+                <ul class="nav-list">
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">ABOUT US</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="about.html" class="dropdown-link">ABOUT OMAN</a></li>
+                            <li><a href="about.html" class="dropdown-link">WHO WE ARE</a></li>
+                            <li><a href="message.html" class="dropdown-link">MESSAGE</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">SERVICES</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" class="dropdown-link">OUR PRODUCTS</a></li>
+                            <li><a href="#" class="dropdown-link">TECHNOLOGY</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">CONTACT US</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Mobile Menu Toggle -->
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <!-- Right side spacer for desktop -->
+            <div class="header-spacer"></div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="content-overlay">
+            <h1 class="main-title">Mobile Menu Test</h1>
+            <p>This is a test page to verify mobile menu functionality.</p>
+            <p>Resize your browser to mobile size or use mobile device to test.</p>
+            <button onclick="testMobileMenu()">Test Mobile Menu</button>
+            <button onclick="testAllMobileMenuFeatures()">Test All Features</button>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
