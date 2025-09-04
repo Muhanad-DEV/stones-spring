@@ -2,17 +2,20 @@
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Script loaded on:', window.location.pathname);
     
-    // Handle navigation links
+    // Handle navigation links - close mobile menu when clicking
     const navLinks = document.querySelectorAll('.nav-link, .dropdown-item');
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            // Close mobile menu if it's open (Bootstrap handles this automatically)
+            // Close mobile menu if it's open
             const navbarCollapse = document.querySelector('.navbar-collapse');
             if (navbarCollapse && navbarCollapse.classList.contains('show')) {
-                const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
-                    toggle: false
-                });
-                bsCollapse.hide();
+                // Simple approach: just remove the show class
+                navbarCollapse.classList.remove('show');
+                // Also remove the aria-expanded attribute
+                const toggler = document.querySelector('.navbar-toggler');
+                if (toggler) {
+                    toggler.setAttribute('aria-expanded', 'false');
+                }
             }
         });
     });
@@ -35,10 +38,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Add scroll effect to navbar
 window.addEventListener('scroll', function() {
     const navbar = document.querySelector('.custom-navbar');
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
+    if (navbar) {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
     }
 });
 
