@@ -93,7 +93,7 @@ body::after {
 
 /* Bootstrap Navbar Custom Styles */
 .custom-navbar {
-    background: rgba(30, 41, 76, 0.85) !important;
+    background: #F7F7F7 !important;
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--color-fog);
     position: relative;
@@ -104,19 +104,19 @@ body::after {
 .custom-navbar .navbar-brand {
     display: flex;
     align-items: center;
-    color: var(--color-pure-white) !important;
+    color: var(--color-navy-stone) !important;
     font-weight: 700;
     font-size: 1.2rem;
     letter-spacing: 1px;
     padding: 8px 12px;
     border-radius: 8px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(30, 41, 76, 0.1);
     backdrop-filter: blur(5px);
     transition: all 0.3s ease;
 }
 
 .custom-navbar .navbar-brand:hover {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(30, 41, 76, 0.15);
     transform: translateY(-1px);
 }
 
@@ -130,7 +130,7 @@ body::after {
 }
 
 .custom-navbar .nav-link {
-    color: var(--color-pure-white) !important;
+    color: var(--color-navy-stone) !important;
     font-weight: 600;
     font-size: 0.95rem;
     letter-spacing: 0.5px;
@@ -174,19 +174,19 @@ body::after {
 }
 
 .custom-navbar .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
 .custom-navbar.scrolled {
-    background: rgba(30, 41, 76, 0.95) !important;
+    background: #F7F7F7 !important;
     backdrop-filter: blur(15px);
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 20px rgba(255, 255, 255, 0.731);
 }
 
 /* Mobile menu styles - using Bootstrap defaults */
 @media (max-width: 991.98px) {
     .custom-navbar .navbar-collapse {
-        background: rgba(30, 41, 76, 0.98);
+        background: #F7F7F7;
         margin-top: 10px;
         border-radius: 8px;
         padding: 15px;
